@@ -1,0 +1,128 @@
+/* Color Palette from menu.jpg (and refined descriptions) */
+:root {
+    --color-dark-green: #1C5627;          /* Company title green (for H1 headings, etc.) */
+    --color-bright-gold-orange: #F4C700;  /* Bright yellow from menu (used for accents/text, buttons, logo) */
+    --color-light-body-bg: #FFFBE6;      /* Very light yellow/cream for body background, subtly complimenting gold */
+    --color-header-bg-from-menu: #265C34; /* Darker, muted green for header background, like menu top */
+    --color-black: #000000;               /* For strong text/elements */
+    --color-dark-orange-price: #C96600;   /* Darker orange for prices, slightly muted from E07600 */
+    --color-white: #FFFFFF;              /* Pure white for certain elements if needed */
+    --color-grey-text: #555555;           /* General paragraph text color */
+}
+
+/* General Body & Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-light-body-bg); /* Light yellow/cream body background */
+    color: var(--color-grey-text); /* General text color */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark-green); /* Headings in dark green */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-bright-gold-orange); /* Bright gold/orange underline */
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark-green); /* Links in dark green */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-bright-gold-orange); /* Gold/orange on hover */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--color-bright-gold-orange); /* Buttons are gold/orange */
+    color: var(--color-black); /* Black text on gold button */
+    border: 2px solid var(--color-bright-gold-orange);
+}
+
+.primary-btn:hover {
+    background-color: var(--color-dark-green); /* Dark green on hover */
+    border-color: var(--color-dark-green);
+    color: var(--color-white); /* White text on hover */
+}
+
+/* Header */
+header {
+    background-color: var(--color-header-bg-from-menu); /* Darker, muted green Header (like menu) */
+    color: var(--color-white); /* Nav links are white */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-bright-gold-orange); /* H1 Logo in bright gold/orange (like menu) */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--color-white); /*

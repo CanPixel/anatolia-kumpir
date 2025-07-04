@@ -1,0 +1,611 @@
+/* New Color Palette based on colors.jpg - Professional, Modern Green & Wood Focus */
+:root {
+    --color-light-cream: #FDF9F2; /* A very light, almost white, cream for main backgrounds */
+    --color-medium-wood: #E0D3C4; /* A soft, light wood tone for secondary backgrounds/cards */
+    --color-dark-wood: #B5A08A; /* A richer, medium wood tone for accents and borders */
+    --color-darkest-wood: #7A6553; /* A deep, warm wood tone for strong contrasts and footers */
+    --color-primary-green: #2C5B32; /* The prominent dark green from the sign */
+    --color-light-green: #90B896; /* A lighter, muted green for subtle accents */
+    --color-text-dark: #2B2B2B; /* A deep, professional dark grey for primary text */
+    --color-text-medium: #5C5C5C; /* A medium grey for secondary text */
+    --color-accent-gold: #D4A86A; /* A refined gold/bronze for highlights and buttons */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-padding-top: 80px; /* Offset for fixed header height */
+}
+
+/* General Body & Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-light-cream); /* Main background: light cream */
+    color: var(--color-text-dark); /* Primary text color */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header Logo Area */
+.logo-area {
+    text-align: left;
+}
+
+.logo-area .logo {
+    margin-bottom: 0;
+}
+
+.logo-area .tagline {
+    font-size: 1rem;
+    color: var(--color-text-medium); /* Muted tagline */
+    margin-top: -5px;
+    margin-bottom: 0;
+    font-family: 'Viga', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-dark); /* Headings in dark text by default */
+}
+
+h1.logo { /* Specific style for the main logo heading */
+    color: var(--color-primary-green); /* Prominent green for the main logo */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    color: var(--color-primary-green); /* Section headings in primary green */
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-dark-wood); /* Wood tone underline */
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary-green); /* Green for links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-darkest-wood); /* Darker wood tone on hover */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--color-accent-gold); /* Gold button */
+    color: var(--color-text-dark); /* Dark text on gold */
+    border: none; /* Removed border for flat design */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.primary-btn:hover {
+    background-color: var(--color-dark-wood); /* Darker wood tone on hover */
+    color: var(--color-light-cream); /* Light text on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+/* Header */
+header {
+    background-color: var(--color-medium-wood); /* Medium wood tone background */
+    color: var(--color-text-dark);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.1em;
+    font-weight: 300;
+    color: var(--color-primary-green); /* Green for the logo text */
+    font-family: "Viga", sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--color-text-dark); /* Primary text color for nav links */
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-green); /* Green for hover effect, matching text */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--color-primary-green); /* Green on hover */
+}
+
+/* Hero Section */
+#hero {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    animation: hero-slideshow 25s infinite;
+    color: var(--color-text-dark); /* Dark text for hero content */
+    text-align: center;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+/* Keyframes for Hero Slideshow Animation with panning */
+@keyframes hero-slideshow {
+    0% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow1.png'); /* Lighter overlay */
+        background-position: 0% 50%;
+    }
+    19% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow1.png');
+        background-position: 100% 50%;
+    }
+    20% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow2.png');
+        background-position: 0% 50%;
+    }
+    39% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow2.png');
+        background-position: 100% 50%;
+    }
+    40% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow3.png');
+        background-position: 0% 50%;
+    }
+    59% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow3.png');
+        background-position: 100% 50%;
+    }
+    60% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow4.png');
+        background-position: 0% 50%;
+    }
+    79% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow4.png');
+        background-position: 100% 50%;
+    }
+    80% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow5.png');
+        background-position: 0% 50%;
+    }
+    99% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow5.png');
+        background-position: 100% 50%;
+    }
+    100% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/slideshow1.png');
+        background-position: 0% 50%;
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.85); /* More opaque white background for text clarity */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Slightly more pronounced shadow */
+}
+
+.hero-content p {
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    color: var(--color-text-medium); /* Medium text for hero paragraph */
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 40px 0;
+    background-color: var(--color-light-cream); /* Light cream background */
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Adjusted minmax for smaller items */
+    gap: 10px; /* Reduced gap for tighter fit */
+    margin-top: 40px;
+}
+
+.menu-category {
+    background-color: var(--color-medium-wood); /* Medium wood tone background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+    padding: 20px; /* Reduced padding for smaller boxes */
+    text-align: center;
+}
+
+.menu-category h4 {
+    font-size: 1.5em; /* Slightly smaller font for category titles */
+    color: var(--color-primary-green); /* Primary green for category titles */
+    margin-bottom: 15px; /* Reduced margin */
+    border-bottom: 2px solid var(--color-dark-wood); /* Dark wood tone underline */
+    padding-bottom: 8px; /* Reduced padding */
+    display: inline-block;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced gap */
+    margin-bottom: 15px; /* Reduced margin */
+    padding-bottom: 10px; /* Reduced padding */
+    border-bottom: 1px dashed var(--color-dark-wood); /* Wood tone dashed line */
+    text-align: left;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.menu-item img {
+    width: 80px; /* Smaller image size */
+    height: 80px; /* Smaller image size */
+    object-fit: cover;
+    border-radius: 6px;
+    border: none; /* Removed border for flat design */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    flex-shrink: 0;
+}
+
+.menu-big-item img {
+    width: 100%;
+    background-color: var(--color-dark-wood); /* Dark wood tone background for big image */
+    border-radius: 6px;
+    border: none; /* Removed border for flat design */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h5 {
+    margin: 0 0 3px 0; /* Reduced margin */
+    font-size: 1em; /* Slightly smaller font */
+    color: var(--color-text-dark);
+}
+
+.item-details p {
+    font-size: 0.85em; /* Slightly smaller font */
+    color: var(--color-text-medium);
+    margin: 0;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--color-primary-green); /* Primary green for prices */
+    font-size: 1em; /* Slightly smaller font */
+    float: right;
+}
+
+.vegetarian {
+    background-color: var(--color-light-green); /* Light green for vegetarian */
+    color: var(--color-text-dark); /* Dark text on light green */
+    padding: 2px 6px; /* Smaller padding */
+    border-radius: 4px;
+    font-size: 0.65em; /* Smaller font */
+    font-weight: 600;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.meat {
+    background-color: var(--color-accent-gold); /* Gold for meat to make it pop */
+    color: var(--color-text-dark); /* Dark text on gold */
+    padding: 2px 6px; /* Smaller padding */
+    border-radius: 4px;
+    font-size: 0.65em; /* Smaller font */
+    font-weight: 600;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+/* About Section */
+#about {
+    background-color: var(--color-medium-wood); /* Medium wood tone for distinction */
+    padding: 60px 0;
+    text-align: center;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1em;
+    color: var(--color-text-dark);
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--color-darkest-wood); /* Darkest wood tone background */
+    color: var(--color-light-cream); /* Light text on dark background */
+    padding: 60px 0;
+    text-align: center;
+}
+
+#contact h3 {
+    color: var(--color-light-cream); /* Light green heading */
+}
+
+#contact h3::after {
+    background-color: var(--color-accent-gold); /* Gold underline */
+}
+
+#contact p {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: var(--color-accent-gold); /* Gold links */
+}
+
+#contact a:hover {
+    color: var(--color-light-cream); /* Lighter on hover */
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-icon {
+    display: inline-block;
+    background-color: var(--color-primary-green); /* Primary green social icons */
+    color: var(--color-light-cream);
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--color-accent-gold); /* Gold on hover */
+    color: var(--color-text-dark); /* Dark text on hover */
+}
+
+/* Location Grid & Cards */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.location-card {
+    background-color: var(--color-dark-wood); /* Dark wood tone */
+    padding: 25px;
+    border-radius: 8px;
+    border: none; /* Removed border for flat design */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card h4 {
+    color: var(--color-light-cream); /* Light text for card titles */
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.location-card h4::after {
+    display: none;
+}
+
+.location-card p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    flex-grow: 1;
+    color: var(--color-light-cream); /* Light text for card paragraphs */
+}
+
+.location-card strong {
+    color: var(--color-light-cream);
+}
+
+.map-link {
+    background-color: var(--color-primary-green); /* Primary green map link button */
+    color: var(--color-light-cream);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none; /* Removed border for flat design */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.map-link:hover {
+    background-color: var(--color-accent-gold); /* Gold on hover */
+    color: var(--color-text-dark); /* Dark text on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.contact-general {
+    margin-top: 50px;
+    border-top: 1px solid var(--color-dark-wood); /* Wood tone border */
+    padding-top: 30px;
+}
+
+/* ---- Opening Hours Box ---- */
+.opening-hours-box {
+    max-width: 300px;
+    margin: 40px auto;
+    background-color: var(--color-medium-wood); /* Medium wood tone background */
+    border: none; /* Removed border for flat design */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+    color: var(--color-text-dark);
+    text-align: center;
+}
+
+.opening-hours-box p strong {
+    color: var(--color-primary-green); /* Primary green for opening hours heading */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.opening-hours-box .hours-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 15px;
+    text-align: left;
+}
+
+.opening-hours-box .hours-grid span:nth-child(even) {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-darkest-wood); /* Darkest wood tone for footer */
+    color: var(--color-light-cream); /* Light text on dark footer */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        gap: 15px; 
+    }
+
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-item img {
+        margin-bottom: 10px;
+    }
+
+    .price {
+        float: none;
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.7em;
+    }
+
+    .primary-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+}
